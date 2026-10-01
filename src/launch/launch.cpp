@@ -229,7 +229,7 @@ int launch(const LaunchArgs& args, char** argv, QCoreApplication* coreApplicatio
 	delete coreApplication;
 
 	QGuiApplication* app = nullptr;
-	auto qArgC = 0;
+	auto qArgC = (argv != nullptr && argv[0] != nullptr) ? 1 : 0;
 
 	if (pragmas.useQApplication) {
 		app = new QApplication(qArgC, argv);
